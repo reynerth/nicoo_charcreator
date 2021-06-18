@@ -2,7 +2,7 @@ Config = {}
 
 -- Language du menu
 -- Menu language
-Config.Locale = 'fr'
+Config.Locale = 'en'
 
 -- Location du spawn joueur après la création du personnage
 -- Rental of player spawn after character creation
@@ -17,7 +17,7 @@ Config.FatherList = { "Benjamin", "Daniel", "Joshua", "Noah", "Andrew", "Juan", 
 -- Liste des tenues
 Config.Outfit = {
 	{
-		label = 'Sous-Vêtement',
+		label = 'Underwear',
 		id = {
 			male = {
 				tshirt = {15, 0},

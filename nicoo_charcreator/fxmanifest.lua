@@ -1,5 +1,10 @@
-fx_version 'adamant'
-games { 'gta5' };
+fx_version 'cerulean'
+games { 'gta5' }
+
+author 'NicooPasPis'
+-- Edited by X00LA
+description 'Nicoo Char Creator'
+version '1.1.0'
 
 client_scripts {
     'RageUI/src/RMenu.lua',

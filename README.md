@@ -9,7 +9,66 @@ Fivem Character Creator
 
 • [esx_skin](https://github.com/esx-framework/esx_skin)
 
-## Installation
+## Installation  
+  
+1. Install [esx_skin](https://github.com/esx-framework/esx_skin) & [skinchanger](https://github.com/esx-framework/skinchanger).
+  
+2. Add in your server.cfg "ensure nicoo_charcreator" (Make sure the resource is started after the 'esx_skin' & 'skinchanger' resources).
+
+3. To open nicoo_charcreator after registration with esx_identity you have to change the following lines in esx_skin/client/main.lua:
+
+```
+	261		TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
+	to
+    261		--TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
+	262		TriggerEvent('nicoo_charcreator:CharCreator')
+```
+** and **
+```
+	287		TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
+	to
+    287		--TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
+	288		TriggerEvent('nicoo_charcreator:CharCreator')
+```
+
+Now nicoo_charcreator opens after the registration with esx_identity!
+Same applies if you are not using esx_identiy (But who would do that?).
+
+4. Configure, if you wish, the "config.lua" file.
+
+## Installation with esx_multichar from thelindat -- https://github.com/thelindat/esx_multicharacter
+
+1. Follow steps 1 - 3 from above.
+
+2. Change the following line in esx_multichar/client/main.lua:
+
+```
+	281		TriggerEvent('esx_skin:openSaveableMenu')
+	to
+	281		--TriggerEvent('esx_skin:openSaveableMenu')
+	282		TriggerEvent('nicoo_charcreator:CharCreator')
+```
+
+Now nicoo_charcreator opens after the registration with esx_identity and esx_multichar!
+
+4. Configure, if you wish, the "config.lua" file.
+
+## Changelog:
+
+* 18-06-2021 *
+```
+- Forked Repo from NicooPasPris - https://github.com/NicooPasPris/nicoo_charcreator the original creator of this char creator.
+- Added fix for issue with color selection and mouse movement. Thanks to STARMEET https://github.com/STARMEET/Corrections.
+- Dragged stream folder from inside of RageUI folder to main folder to fix some issues with the UI.
+- Changed default language in config to en.
+- Added up to date installation instructions.
+- Added installation instruction for esx_multichsr from thelindat https://github.com/thelindat/esx_multicharacter.
+- Updated fxmanifest.lua.
+- Updated README file... ;)
+```
+
+## Outdated Installation!
+## Don't use this installation until you use old esx_skinchanger and esx_skin! With newest skinchanger (1.0.3) the changes already implemented.
 
 1. Install [esx_skin](https://github.com/esx-framework/esx_skin) & [skinchanger](https://github.com/esx-framework/skinchanger)
 
