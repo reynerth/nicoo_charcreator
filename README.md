@@ -11,7 +11,8 @@ Fivem Character Creator
 
 ## Installation  
   
-1. Install [esx_skin](https://github.com/esx-framework/esx_skin) & [skinchanger](https://github.com/esx-framework/skinchanger).
+1. Install [esx_skin](https://github.com/esx-framework/esx_skin) 1.1.0 & [skinchanger](https://github.com/esx-framework/skinchanger) 1.0.3.
+Be sure you have the right versions of esx_skin and esx_skinchanger, otherwise it will not work!
   
 2. Add in your server.cfg "ensure nicoo_charcreator" (Make sure the resource is started after the 'esx_skin' & 'skinchanger' resources).
 
@@ -20,14 +21,14 @@ Fivem Character Creator
 ```
 	261		TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
 	to
-    261		--TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
+    	261		--TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
 	262		TriggerEvent('nicoo_charcreator:CharCreator')
 ```
-** and **
+__and__
 ```
 	287		TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
 	to
-    287		--TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
+    	287		--TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
 	288		TriggerEvent('nicoo_charcreator:CharCreator')
 ```
 
@@ -55,7 +56,7 @@ Now nicoo_charcreator opens after the registration with esx_identity and esx_mul
 
 ## Changelog:
 
-* 18-06-2021 *
+__18-06-2021__
 ```
 - Forked Repo from NicooPasPris - https://github.com/NicooPasPris/nicoo_charcreator the original creator of this char creator.
 - Added fix for issue with color selection and mouse movement. Thanks to STARMEET https://github.com/STARMEET/Corrections.
