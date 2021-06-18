@@ -20,14 +20,14 @@ Fivem Character Creator
 ```
 	261		TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
 	to
-    261		--TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
+    	261		--TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
 	262		TriggerEvent('nicoo_charcreator:CharCreator')
 ```
 __and__
 ```
 	287		TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
 	to
-    287		--TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
+    	287		--TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
 	288		TriggerEvent('nicoo_charcreator:CharCreator')
 ```
 
