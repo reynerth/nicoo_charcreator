@@ -55,7 +55,7 @@ Now nicoo_charcreator opens after the registration with esx_identity and esx_mul
 
 ## Changelog:
 
-# 18-06-2021
+** 18-06-2021
 ```
 - Forked Repo from NicooPasPris - https://github.com/NicooPasPris/nicoo_charcreator the original creator of this char creator.
 - Added fix for issue with color selection and mouse movement. Thanks to STARMEET https://github.com/STARMEET/Corrections.
