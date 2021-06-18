@@ -68,6 +68,12 @@ __18-06-2021__
 - Updated README file... ;)
 ```
 
+__19-06-2021__
+```
+- Added german language.
+- Updated README file... ;)
+```
+
 ## Outdated Installation!
 ## Don't use this installation until you use old esx_skinchanger and esx_skin! With newest skinchanger (1.0.3) the changes already implemented.
 
