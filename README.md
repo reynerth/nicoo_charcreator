@@ -11,7 +11,8 @@ Fivem Character Creator
 
 ## Installation  
   
-1. Install [esx_skin](https://github.com/esx-framework/esx_skin) & [skinchanger](https://github.com/esx-framework/skinchanger).
+1. Install [esx_skin](https://github.com/esx-framework/esx_skin) 1.1.0 & [skinchanger](https://github.com/esx-framework/skinchanger) 1.0.3.
+Be sure you have the right versions of esx_skin and esx_skinchanger, otherwise it will not work!
   
 2. Add in your server.cfg "ensure nicoo_charcreator" (Make sure the resource is started after the 'esx_skin' & 'skinchanger' resources).
 
