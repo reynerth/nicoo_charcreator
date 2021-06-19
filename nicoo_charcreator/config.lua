@@ -8,6 +8,21 @@ Config.Locale = 'en'
 -- Rental of player spawn after character creation
 Config.PlayerSpawn = {x = -1042.635, y =-2745.828, z = 21.359, h = -30.0}
 
+-- If you want to enable command to open the char creator outside of registration set to true
+Config.useCommand = true
+
+-- Are Permissions required to use the command to open the creator outside of registration
+-- If true add:
+-- add_ace group.ALLOWEDGROUP command.skin allow (deny to deny usage of command)
+-- EXAMPLES:
+-- add_ace group.admin command.skin allow --> allows admins to use the command
+-- add_ace group.builtin.everyone command.skin deny --> denies every player to use the command
+-- If you use the examples above together you are denying all players to use the command exept admins which are allowed
+-- By default only the specified admin group is allowed to use the command.
+-- Use permissions only if you want to allow others to open the creator as well.
+Config.PermissionsRequired = false		-- Set to true if you want to use permissions
+Config.AdminGroup = 'admin'			-- The admin group on your server (default = admin)
+
 -- Name of parents for inheritance (Do not add / remove character, you can just replace them)
 -- Nom des parents pour l'héritage (Ne pas ajouter / supprimer de personnage, vous pouvez juste les remplacés)
 Config.MotherList = { "Hannah", "Aubrey", "Jasmine", "Gisele", "Amelia", "Isabella", "Zoe", "Ava", "Camila", "Violet", "Sophia", "Evelyn", "Nicole", "Ashley", "Gracie", "Brianna", "Natalie", "Olivia", "Elizabeth", "Charlotte", "Emma" }

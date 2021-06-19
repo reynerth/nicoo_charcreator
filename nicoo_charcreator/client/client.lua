@@ -293,6 +293,15 @@ function CharCreatorAnimation()
 	Visible()
 end
 
+function showCreator()
+	enable = true
+	-- Hide HUD
+	ESX.UI.HUD.SetDisplay(0.0)
+	DisplayRadar(false)
+	AnimCam()
+	Visible()
+end
+
 function AnimCam()
 	local playerPed = PlayerPedId()
     DoScreenFadeOut(1000)
@@ -345,6 +354,12 @@ function EndCharCreator()
 	Wait(1000)
 	TriggerServerEvent('esx_skin:save', Character)
 	TriggerEvent('skinchanger:loadSkin', Character)
+	--[[exports['t-notify']:Custom({
+		style  =  'message',
+		duration  =  20000,
+		title  =  'NOTIFICATION',
+		message  =  '** Welcome to San Andreas, the capital of Los Santos! ** \n\n ** 🚋 You can get to the city center easily and free of charge by underground. ** \n\n ** 🚕 If you want it more comfortable, you can also take a taxi. (📲) ** \n\n ** 🚗 Of course, you can also simply rent a vehicle. ** \n\n ** 🗺️ You can find all locations on the map. **'
+	})]]--
 end
 
 function LoadAnim(dict)
@@ -400,3 +415,23 @@ RegisterNetEvent('nicoo_charcreator:CharCreator')
 AddEventHandler('nicoo_charcreator:CharCreator', function()
 	CharCreatorAnimation()
 end)
+
+RegisterNetEvent('nicoo_charcreator:CharCreator')
+AddEventHandler('nicoo_charcreator:CharCreator', function()
+    showCreator()
+end)
+
+if Config.useCommand then
+    RegisterCommand('skin', function(source, args, raw)
+		if Config.PermissionsRequired then
+			ESX.TriggerServerCallback('nicoo_charcreator:getGroup', function(group_res)
+				if group_res == Config.AdminGroup then
+					showCreator()
+				end
+			end)
+		else
+			showCreator()
+		end
+        
+    end)
+end
