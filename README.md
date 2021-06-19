@@ -71,6 +71,7 @@ __18-06-2021__
 __19-06-2021__
 ```
 - Added german language.
+- Fixed translation isues in UI.
 - Updated README file... ;)
 ```
 
