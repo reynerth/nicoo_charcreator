@@ -21,7 +21,7 @@ Be sure you have the right versions of esx_skin and esx_skinchanger, otherwise i
 ```
 	261		TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
 
-	__to__
+	to
 
     	261		--TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
 	262		TriggerEvent('nicoo_charcreator:CharCreator')
@@ -30,7 +30,7 @@ __and__
 ```
 	287		TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
 
-	__to__
+	to
 
     	287		--TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
 	288		TriggerEvent('nicoo_charcreator:CharCreator')
@@ -49,7 +49,9 @@ Same applies if you are not using esx_identiy (But who would do that?).
 
 ```
 	281		TriggerEvent('esx_skin:openSaveableMenu')
+	
 	to
+	
 	281		--TriggerEvent('esx_skin:openSaveableMenu')
 	282		TriggerEvent('nicoo_charcreator:CharCreator')
 ```
