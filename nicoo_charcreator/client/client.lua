@@ -345,6 +345,12 @@ function EndCharCreator()
 	Wait(1000)
 	TriggerServerEvent('esx_skin:save', Character)
 	TriggerEvent('skinchanger:loadSkin', Character)
+	--[[exports['t-notify']:Custom({
+		style  =  'message',
+		duration  =  20000,
+		title  =  'NOTIFICATION',
+		message  =  '** Welcome to San Andreas, the capital of Los Santos! ** \n\n ** 🚋 You can get to the city center easily and free of charge by underground. ** \n\n ** 🚕 If you want it more comfortable, you can also take a taxi. (📲) ** \n\n ** 🚗 Of course, you can also simply rent a vehicle. ** \n\n ** 🗺️ You can find all locations on the map. **'
+	})]]--
 end
 
 function LoadAnim(dict)
@@ -380,20 +386,12 @@ function Collision()
 end
 
 function Visible()
-	    while enable == true do
-	        Citizen.Wait(0)
-	        Collision()
-		DisableControlAction(0, 0, true)
-		DisableControlAction(0, 22, true)
-		DisableControlAction(0, 24, true)
-		DisableControlAction(0, 32, true)
-		DisableControlAction(0, 33, true)
-		DisableControlAction(0, 34, true)
-		DisableControlAction(0, 35, true)
-		DisableControlAction(0, 36, true)
-		DisableControlAction(0, 253, true)
-	    end
-	end
+    while enable == true do
+        Citizen.Wait(0)
+        DisableAllControlActions(0)
+        Collision()
+    end
+end
 
 -- Open Menu
 RegisterNetEvent('nicoo_charcreator:CharCreator')

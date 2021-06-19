@@ -20,15 +20,19 @@ Be sure you have the right versions of esx_skin and esx_skinchanger, otherwise i
 
 ```
 	261		TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
-	to
-    	261		--TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
+
+	__to__
+
+    261		--TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
 	262		TriggerEvent('nicoo_charcreator:CharCreator')
 ```
 __and__
 ```
 	287		TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
-	to
-    	287		--TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
+
+	__to__
+
+    287		--TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
 	288		TriggerEvent('nicoo_charcreator:CharCreator')
 ```
 
@@ -72,6 +76,8 @@ __19-06-2021__
 ```
 - Added german language.
 - Fixed translation isues in UI.
+- Added notification when player spawns the first time. (needs t-notify for work)
+See client.lua line __348__ for the notification. Comment out by default! Heres a screen of it: [Screenshot](https://i.imgur.com/95srWZV.png)
 - Updated README file... ;)
 ```
 
