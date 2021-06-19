@@ -79,7 +79,8 @@ __19-06-2021__
 - Added german language.
 - Fixed translation isues in UI.
 - Added notification when player spawns the first time. (needs t-notify for work)
-See client.lua line __348__ for the notification. Comment out by default! Heres a screen of it: [Screenshot](https://i.imgur.com/95srWZV.png)
+See client.lua line __348__ for the notification. Comment out by default! Heres a screen of it: https://i.imgur.com/95srWZV.png
+- Added more outfits. (Casual, Aztecas, Ballas, Mara-Bunta and Biker)
 - Updated README file... ;)
 ```
 
