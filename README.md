@@ -20,14 +20,18 @@ Be sure you have the right versions of esx_skin and esx_skinchanger, otherwise i
 
 ```
 	261		TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
+
 	to
+
     	261		--TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
 	262		TriggerEvent('nicoo_charcreator:CharCreator')
 ```
 __and__
 ```
 	287		TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
+
 	to
+
     	287		--TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
 	288		TriggerEvent('nicoo_charcreator:CharCreator')
 ```
@@ -45,7 +49,9 @@ Same applies if you are not using esx_identiy (But who would do that?).
 
 ```
 	281		TriggerEvent('esx_skin:openSaveableMenu')
+
 	to
+
 	281		--TriggerEvent('esx_skin:openSaveableMenu')
 	282		TriggerEvent('nicoo_charcreator:CharCreator')
 ```
@@ -72,6 +78,19 @@ __19-06-2021__
 ```
 - Added german language.
 - Fixed translation isues in UI.
+- Added notification when player spawns the first time. (needs t-notify for work)
+See client.lua line __348__ for the notification. Comment out by default! Heres a screen of it: https://i.imgur.com/95srWZV.png
+- Added /skin command to open charcreator out of char creation.
+- Added permission system to allow only admin to call the /skin command.
+- Added permissions to allow other players to use the /skin command. (see examples in config)
+- Added config entries for command usage.
+NOTE: There are some issues with this command!
+1. Actual player skin is not showing it uses the default skin!
+2. If you save your new player the clothings are NOT showing when you spawn again. You have to reapply them.
+3. The player spawns at default spawn location (LSIAP)!
+I tried to open the creator without the animation and location part but it looks like the complete skin_creator has to be recoded for that.
+Same applies for issues with player skin and spawnpoint. As I am new to coding and my level of knowledge is quiet small I leave it as it is. (It was only a test if I could make it with the permissions.)
+If you want to help to make this not only a vision of mine feel free to create a pull request.
 - Updated README file... ;)
 ```
 
