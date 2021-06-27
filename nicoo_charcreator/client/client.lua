@@ -54,14 +54,14 @@ function changeModel(skin)
 
         elseif skin == 'mp_f_freemode_01' then
             SetPedComponentVariation(GetPlayerPed(-1), 3, 15, 0, 2) -- arms
-            SetPedComponentVariation(GetPlayerPed(-1), 11, 5, 0, 2) -- torso
-            SetPedComponentVariation(GetPlayerPed(-1), 8, 15, 0, 2) -- tshirt
+            SetPedComponentVariation(GetPlayerPed(-1), 11, 18, 0, 2) -- torso
+            SetPedComponentVariation(GetPlayerPed(-1), 8, 14, 0, 2) -- tshirt
             SetPedComponentVariation(GetPlayerPed(-1), 4, 57, 0, 2) -- pants
             SetPedComponentVariation(GetPlayerPed(-1), 6, 35, 0, 2) -- shoes
 
             Character['arms'] = 15
-            Character['torso_1'] = 5
-            Character['tshirt_1'] = 15
+            Character['torso_1'] = 18
+            Character['tshirt_1'] = 14
             Character['pants_1'] = 57
             Character['pants_2'] = 0
             Character['shoes_1'] = 35
@@ -315,10 +315,13 @@ function AnimCam()
     TaskPlayAnim(GetPlayerPed(-1), "mp_character_creation@customise@male_a", "intro", 1.0, 1.0, 4000, 0, 1, 0, 0, 0)
     Citizen.Wait(5000)
 
-    local coords = GetEntityCoords(GetPlayerPed(-1))
-    if GetDistanceBetweenCoords(coords, 402.89, -996.87, -99.0, true) > 0.5 then
-    	SetEntityCoords(GetPlayerPed(-1), 402.89, -996.87, -99.0, 0.0, 0.0, 0.0, true)
-    	SetEntityHeading(GetPlayerPed(-1), 173.97)
+    local coords = GetEntityCoords(PlayerPedId())
+    if #(coords - vector3(402.89, -996.87, -99.98)) > 0.1 then
+        FreezeEntityPosition(PlayerPedId(), true)
+        ClearPedTasks(PlayerPedId())
+        Wait(100)
+        SetEntityCoords(PlayerPedId(), 402.89, -996.87, -99.98, 0.0, 0.0, 0.0, true)
+        SetEntityHeading(PlayerPedId(), 173.97)
     end
 
     Citizen.Wait(100)
