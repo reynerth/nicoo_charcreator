@@ -4,7 +4,7 @@ games { 'gta5' }
 author 'NicooPasPis'
 -- Edited by X00LA
 description 'Nicoo Char Creator'
-version '1.3.0'
+version '1.4.2'
 
 client_scripts {
     'RageUI/src/RMenu.lua',
