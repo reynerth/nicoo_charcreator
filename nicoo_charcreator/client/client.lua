@@ -345,12 +345,12 @@ function EndCharCreator()
 	Wait(1000)
 	TriggerServerEvent('esx_skin:save', Character)
 	TriggerEvent('skinchanger:loadSkin', Character)
-	exports['t-notify']:Custom({
+	--[[exports['t-notify']:Custom({
 		style  =  'message',
 		duration  =  20000,
 		title  =  'HINWEIS',
 		message  =  '** Willkommen in San Andreas, der Hauptstadt von Los Santos! ** \n\n ** 🚋 Mit der U-Bahn kommst du einfach und kostenlos in die Innenstadt. ** \n\n ** 🚕 Wenn du es komfortabler willst, kannst du auch ein Taxi nehmen. (📲) ** \n\n ** 🚗 Du kannst dir natürlich auch einfach ein Fahrzeug mieten. ** \n\n ** 🗺️ Alle Standorte findest du auf der Karte. **'
-	})
+	})]]--
 end
 
 function LoadAnim(dict)
