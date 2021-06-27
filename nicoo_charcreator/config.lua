@@ -2,7 +2,7 @@ Config = {}
 
 -- Language du menu
 -- Menu language
-Config.Locale = 'en'
+Config.Locale = 'de'
 
 -- Location du spawn joueur après la création du personnage
 -- Rental of player spawn after character creation
