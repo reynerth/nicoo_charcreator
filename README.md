@@ -88,6 +88,8 @@ __1.4.2__
 ```
 - Added fix for sometimes falling down half a meter from air and improvement in checking current position. (Thank's to GROMO in Discord for that.)
 - Added fix for sometimes glitching of char when changing clothes. (Thank's to GROMO in Discord for that.)
+```
+
 
 ## Outdated Installation!
 ## Don't use this installation until you use old esx_skinchanger and esx_skin! With newest skinchanger (1.0.3) the changes already implemented.
