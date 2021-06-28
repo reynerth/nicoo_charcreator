@@ -60,6 +60,100 @@ Now nicoo_charcreator opens after the registration with esx_identity and esx_mul
 
 4. Configure, if you wish, the "config.lua" file.
 
+## After the Multichar Update to 1.2.0 the new added feature for the heading correction at spawning brokes the char creator.
+## If you are using esx_multicharacter 1.2.0+ you MUST use this fix to get the charcreator working!
+
+From line __267 to 301__ do this:
+
+```
+--[[if isNew or not skin or #skin == 1 then
+		local sex = skin.sex or 0
+		if sex == 0 then model = `mp_m_freemode_01` else model = `mp_f_freemode_01` end
+		RequestModel(model)
+		while not HasModelLoaded(model) do
+			RequestModel(model)
+			Citizen.Wait(0)
+		end
+		SetPlayerModel(PlayerId(), model)
+		SetModelAsNoLongerNeeded(model)
+		skin = Config.Default
+		skin.sex = sex
+		TriggerEvent('skinchanger:loadSkin', skin, function()
+			playerPed = PlayerPedId()
+			SetPedAoBlobRendering(playerPed, true)
+			ResetEntityAlpha(playerPed)
+			TriggerEvent('esx_skin:openSaveableMenu', function()
+				finished = true end, function() finished = true
+			end)
+			SetEntityHeading(playerPed, spawn.heading)
+		end)
+		while not finished do Citizen.Wait(200) end
+	else
+		local playerPed = PlayerPedId()
+		SetEntityHeading(playerPed, spawn.heading)
+		TriggerEvent('skinchanger:loadSkin', skin or Characters[Spawned].skin)
+		playerPed = PlayerPedId()
+		SetEntityVisible(playerPed, true, 0)
+	end
+	TriggerServerEvent('esx:onPlayerSpawn')
+	TriggerEvent('esx:onPlayerSpawn')
+	TriggerEvent('playerSpawned')
+	TriggerEvent('esx:restoreLoadout')
+	Characters, hidePlayers = {}, false
+end)]]--
+```
+
+And right underneath paste this:
+
+```
+if isNew or not skin or #skin == 1 then
+		local sex = skin.sex or 0
+		if sex == 0 then model = `mp_m_freemode_01` else model = `mp_f_freemode_01` end
+		RequestModel(model)
+		while not HasModelLoaded(model) do
+			RequestModel(model)
+			Citizen.Wait(0)
+		end
+		SetPlayerModel(PlayerId(), model)
+		SetModelAsNoLongerNeeded(model)
+		skin = Config.Default
+		skin.sex = sex
+		TriggerEvent('skinchanger:loadSkin', skin, function()
+			Citizen.CreateThread(function()
+				playerped = PlayerPedId()
+				SetPedAoBlobRendering(playerPed, true)
+				ResetEntityAlpha(playerPed)
+				Citizen.Wait(1500)
+				--TriggerEvent('esx_skin:openSaveableMenu')
+				TriggerEvent('nicoo_charcreator:CharCreator')
+				SetEntityHeading(playerPed, spawn.heading)
+			end)
+		end)
+	else
+		TriggerEvent('skinchanger:loadSkin', skin or Characters[Spawned].skin)
+		Citizen.Wait(1500)
+	end
+	Characters = {}
+	TriggerServerEvent('esx:onPlayerSpawn')
+	TriggerEvent('esx:onPlayerSpawn')
+	TriggerEvent('playerSpawned')
+	TriggerEvent('esx:restoreLoadout')
+	playerPed = PlayerPedId()
+	FreezeEntityPosition(playerPed, false)
+	SetEntityHeading(PlayerPed, spawn.heading)
+	Citizen.Wait(500)
+	RenderScriptCams(false, true, 500, true, true)
+	PlaySoundFrontend(-1, "CAR_BIKE_WHOOSH", "MP_LOBBY_SOUNDS", 1)
+	SetCamActive(cam, false)
+	DestroyAllCams(true)
+	DisplayHud(true)
+	DisplayRadar(true)
+	hidePlayers = false
+end)
+```
+
+Now the char creator works again!
+
 ## Changelog:
 
 __18-06-2021__
