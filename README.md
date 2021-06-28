@@ -61,7 +61,7 @@ Now nicoo_charcreator opens after the registration with esx_identity and esx_mul
 4. Configure, if you wish, the "config.lua" file.
 
 ## After the Multichar Update to 1.2.0 the new added feature for the heading correction at spawning brokes the char creator.
-## If you are using esx_multicharacter 1.2.0+ you MUST use this fix to get the charcreator working!
+## If you are using esx_multicharacter 1.2.0 you MUST use this fix to get the charcreator working!
 
 From line __267 to 301__ do this:
 
