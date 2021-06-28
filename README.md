@@ -92,7 +92,7 @@ __1.4.2__
 
 
 ## Outdated Installation!
-## Don't use this installation until you use old esx_skinchanger and esx_skin! With newest skinchanger (1.0.3) the changes already implemented.
+## Don't use this installation until you use old esx_skinchanger and esx_skin! With newest skinchanger (1.0.3) this changes underneath already implemented.
 
 1. Install [esx_skin](https://github.com/esx-framework/esx_skin) & [skinchanger](https://github.com/esx-framework/skinchanger)
 
