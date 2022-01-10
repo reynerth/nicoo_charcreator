@@ -40,6 +40,21 @@ Now nicoo_charcreator opens after the registration with esx_identity!
 Same applies if you are not using esx_identiy (But who would do that?).
 
 4. Configure, if you wish, the "config.lua" file.
+5. If you have problems saving the Inheritance data (mom and dad info) edit the skinchanger/client/main.lua and search for this line: 
+```
+SetPedHeadBlendData			(playerPed, Character['face'], Character['face'], Character['face'], Character['skin'], Character['skin'], Character['skin'], 1.0, 1.0, 1.0, true)
+```
+and replace with:
+```
+if Character['dad'] and Character['mom'] and Character['shape_mx'] and Character['skin_mx'] then
+	SetPedHeadBlendData(playerPed, Character['dad'], Character['mom'], 0, Character['dad'], Character['mom'], 0, Character['shape_mx'], Character['skin_mx'], 0.0, true)
+else
+	SetPedHeadBlendData(playerPed, Character['face'], Character['face'], Character['face'], Character['skin'], Character['skin'], Character['skin'], 1.0, 1.0, 1.0, true)
+end
+for k,v in pairs(Face) do
+	SetPedFaceFeature(playerPed, k, Character[v])
+end
+```
 
 ## Installation with esx_multichar from thelindat -- https://github.com/thelindat/esx_multicharacter
 
